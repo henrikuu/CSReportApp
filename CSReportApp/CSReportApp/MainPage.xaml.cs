@@ -20,6 +20,17 @@ namespace CSReportApp
 
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
+   
+        }
+
+        private void nappi1_Click(object sender, RoutedEventArgs e)
+        {            
+            NavigationService.Navigate(new Uri("/HelpPage.xaml", UriKind.Relative));
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/PhotoCapturePage.xaml", UriKind.Relative));
         }
 
         // Sample code for building a localized ApplicationBar
@@ -37,5 +48,7 @@ namespace CSReportApp
         //    ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
         //    ApplicationBar.MenuItems.Add(appBarMenuItem);
         //}
+
+        
     }
 }

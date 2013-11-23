@@ -42,11 +42,19 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
-            <TextBlock Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}">
+            	<Run Text="City Helper"/>
+            	<LineBreak/>
+            	<Run/>
+            </TextBlock>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Button x:Name="nappi1" Content="Testinappi" HorizontalAlignment="Left" Margin="62,401,0,0" VerticalAlignment="Top" Click="nappi1_Click" BorderThickness="3"/>
+            <StackPanel HorizontalAlignment="Left" Height="301" Margin="10,10,0,0" VerticalAlignment="Top" Width="368">
+                <Button Content="Take a picture of the problem" Click="Button_Click"/>
+            </StackPanel>
 
         </Grid>
 
