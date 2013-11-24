@@ -9,7 +9,7 @@
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
-    SupportedOrientations="Portrait" Orientation="Portrait"
+    SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
 
@@ -23,16 +23,45 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}">
-            	<Run Text="Help"/>
+            <TextBlock Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Height="102">
+            	<Run Text="Guide"/>
             	<LineBreak/>
             	<Run/>
             </TextBlock>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <Button Content="Back" HorizontalAlignment="Left" Margin="263,417,0,0" VerticalAlignment="Top" Width="169" Click="Button_Click"/>
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="10,10,14,-10">
+            <Button Content="Back" HorizontalAlignment="Left" Margin="277,519,0,0" VerticalAlignment="Top" Width="169" Click="Button_Click"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="469" Width="383">
+            	<Run Text="Your location "/>
+            	<Run Text="is automatically "/>
+            	<Run Text="acquired "/>
+            	<Run Text="with "/>
+            	<Run Text="your phone's location services"/>
+            	<Run Text="."/>
+            	<LineBreak/>
+            	<Run/>
+            	<LineBreak/>
+            	<Run Text="If you want to take a photo, press &quot;Take a picture of the problem&quot; "/>
+            	<Run Text="button. If you want to take a video, press &quot;Take a "/>
+            	<Run Text="video "/>
+            	<Run Text="of the problem&quot; button."/>
+            	<Run Text=" You can describe the problem verbally during the recording of the video."/>
+            	<LineBreak/>
+            	<Run/>
+            	<LineBreak/>
+            	<Run Text="After taking "/>
+            	<Run Text="the"/>
+            	<Run Text=" picture or "/>
+            	<Run Text="the"/>
+            	<Run Text=" video, select "/>
+            	<Run Text="a"/>
+            	<Run Text=" problem type from the list or write "/>
+            	<Run Text="a "/>
+            	<Run Text="short description of the problem"/>
+            	<Run Text=" you want to notify."/>
+            </TextBlock>
 
         </Grid>
     </Grid>

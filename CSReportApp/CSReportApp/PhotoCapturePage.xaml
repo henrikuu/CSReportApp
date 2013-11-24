@@ -25,9 +25,9 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <Canvas x:Name="photoViewfinderCanvas" HorizontalAlignment="Left" Height="675" Margin="0,-40,0,0" VerticalAlignment="Top" Width="446">
+            <Canvas x:Name="photoViewfinderCanvas" HorizontalAlignment="Left" Height="640" Margin="-14,-30,-10,0" VerticalAlignment="Top" Width="480">
                 <Canvas.Background>
-                    <VideoBrush x:Name="photoViewfinderVideoBrush" />
+                    <VideoBrush x:Name="photoViewfinderVideoBrush"/>
                 </Canvas.Background>
             </Canvas>
             <Button x:Name="takePhotoButton" Content="Take photo" HorizontalAlignment="Left" Margin="10,640,0,0" VerticalAlignment="Top" Height="83" Width="206" Click="takePhotoButton_Click"/>

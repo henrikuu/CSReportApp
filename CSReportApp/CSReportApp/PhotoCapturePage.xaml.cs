@@ -8,6 +8,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Microsoft.Devices;
+using System.Windows.Media;
 
 namespace CSReportApp
 {
@@ -26,6 +27,8 @@ namespace CSReportApp
             {
                 camera = new Microsoft.Devices.PhotoCamera(CameraType.Primary);
                 photoViewfinderVideoBrush.SetSource(camera);
+
+                photoViewfinderVideoBrush.RelativeTransform = new CompositeTransform() { CenterX = 0.5, CenterY = 0.5, Rotation = 90 };
             }
             else
             {

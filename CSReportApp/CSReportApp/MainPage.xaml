@@ -10,7 +10,7 @@
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
-    SupportedOrientations="Portrait" Orientation="Portrait"
+    SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
@@ -40,23 +40,20 @@
          -->
 
         <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
-            <TextBlock Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}">
-            	<Run Text="City Helper"/>
-            	<LineBreak/>
-            	<Run/>
-            </TextBlock>
-        </StackPanel>
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28"/>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <Button x:Name="nappi1" Content="Testinappi" HorizontalAlignment="Left" Margin="62,401,0,0" VerticalAlignment="Top" Click="nappi1_Click" BorderThickness="3"/>
-            <StackPanel HorizontalAlignment="Left" Height="301" Margin="10,10,0,0" VerticalAlignment="Top" Width="368">
-                <Button Content="Take a picture of the problem" Click="Button_Click"/>
-            </StackPanel>
-
-        </Grid>
+        <phone:Pivot Margin="0,0,10,0" Grid.RowSpan="2">
+            <phone:PivotItem CacheMode="{x:Null}" Header="City Helper" Margin="24,10,0,18">
+                <Grid Margin="10,10,-10,-10">
+                    <Button x:Name="menuButtonTakePicture" Content="Take a picture of the problem" Click="menuButtonTakePicture_Click" BorderThickness="0" HorizontalAlignment="Left" Padding="0,15,10,15" FontSize="24" Margin="10,9,0,467"/>
+                    <Button x:Name="menuButtonTakeVideo" Content="Take a video of the problem" BorderThickness="0" Click="menuButtonTakeVideo_Click" HorizontalAlignment="Left" Padding="0,15,10,15" FontSize="24" Margin="10,95,0,381"/>
+                </Grid>
+            </phone:PivotItem>
+            <phone:PivotItem CacheMode="{x:Null}" Header="History">
+                <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="No reported items" VerticalAlignment="Top" Height="64" Width="339" FontSize="24" Opacity="0.6"/>
+            </phone:PivotItem>
+        </phone:Pivot>
 
         <!--Uncomment to see an alignment grid to help ensure your controls are
             aligned on common boundaries.  The image has a top margin of -32px to
@@ -66,5 +63,11 @@
             Before shipping remove this XAML and the image itself.-->
         <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
     </Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton Click="Help_Click" IconUri="/Images/questionmark.png" Text="Help"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
 
 </phone:PhoneApplicationPage>
