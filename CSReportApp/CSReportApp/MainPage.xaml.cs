@@ -15,7 +15,9 @@ namespace CSReportApp
     {
         public MainPage()
         {
+
             InitializeComponent();
+            //tee tsekkaus gps
         }
 
         private void menuButtonTakePicture_Click(object sender, RoutedEventArgs e)
@@ -26,7 +28,6 @@ namespace CSReportApp
         private void Help_Click(object sender, EventArgs e)
         {
             NavigationService.Navigate(new Uri("/HelpPage.xaml", UriKind.Relative));
-            //MessageBox.Show("Help button works!");
         }
 
         private void menuButtonTakeVideo_Click(object sender, RoutedEventArgs e)
