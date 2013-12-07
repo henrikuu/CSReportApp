@@ -39,9 +39,6 @@
             CurrentUICulture of the app at run time.
          -->
 
-        <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28"/>
-
         <!--ContentPanel - place additional content here-->
         <phone:Pivot Margin="0,0,10,0" Grid.RowSpan="2">
             <phone:PivotItem CacheMode="{x:Null}" Header="City Helper" Margin="24,10,0,18">

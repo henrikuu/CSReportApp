@@ -60,7 +60,7 @@ namespace CSReportApp
 
         private void AcceptButton_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new Uri("/FinalConfirmationPage.xaml", UriKind.Relative));
         }
     }
 }

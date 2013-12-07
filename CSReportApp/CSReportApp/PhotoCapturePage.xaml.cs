@@ -57,6 +57,12 @@ namespace CSReportApp
 
         protected override void OnNavigatingFrom(System.Windows.Navigation.NavigatingCancelEventArgs e)
         {
+
+            //Deployment.Current.Dispatcher.BeginInvoke(delegate()
+            //{
+            //    MessageBox.Show("Navigate from");
+            //});
+
             if (camera != null)
             {
                 camera.Dispose();
