@@ -28,8 +28,8 @@
                 </Canvas.Background>
             </Canvas>
 
-            <Button x:Name="AcceptButton" Content="Accept" HorizontalAlignment="Left" Margin="258,673,10,12" VerticalAlignment="Top" Height="83" Width="212" Click="AcceptButton_Click"/>
-            <Button x:Name="RetakeButton" Content="Retake" HorizontalAlignment="Left" Margin="10,673,0,0" VerticalAlignment="Top" Height="83" Width="212" Click="RetakeButton_Click"/>
+            <Button x:Name="AcceptButton" Content="Accept" HorizontalAlignment="Left" Margin="10,673,0,0" VerticalAlignment="Top" Height="83" Width="212" Click="AcceptButton_Click"/>
+            <Button x:Name="RetakeButton" Content="Retake" HorizontalAlignment="Left" Margin="258,673,10,12" VerticalAlignment="Top" Height="83" Width="212" Click="RetakeButton_Click"/>
         </Grid>
     </Grid>
 

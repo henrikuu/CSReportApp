@@ -9,21 +9,25 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Windows.Devices.Geolocation;
 using Microsoft.Phone.Info;
+using System.Threading;
+using System.Windows.Threading;
+using System.ComponentModel;
 
 namespace CSReportApp
 {
     public partial class FinalConfirmationPage : PhoneApplicationPage
     {
-        private string faultText;
+        private string faultText = "";
         private string additionalText = "";
-        private string positionString;
-        private string anid;
+        private string positionString = "";
+        private string anid = "";
+        private List<String> faultListSource;
 
         public FinalConfirmationPage()
         {
             InitializeComponent();
 
-            List<String> faultListSource = new List<String>();
+            faultListSource = new List<String>();
             faultListSource.Add("None selected");
             faultListSource.Add("Broken streetlamp");
             faultListSource.Add("Pothole");
@@ -36,14 +40,49 @@ namespace CSReportApp
 
         private void sendReportButton_Click(object sender, RoutedEventArgs e)
         {
-            //faultText = FaultSelection.SelectedItem.ToString();
-            
+            sendReportButton.IsEnabled = false;
+            cancelReportButton.IsEnabled = false;
+            moreInfoTextBox.IsEnabled = false;
+            faultSelectionlistPicker.IsEnabled = false;
+
+            faultText = faultListSource[faultSelectionlistPicker.SelectedIndex];
+
             if (moreInfoTextBox.Text.ToString() != "More information (optional)")
                 additionalText = moreInfoTextBox.Text.ToString();
-
-            getGeolocation();
+            
             anid = GetAnid();
 
+            progressBar.Visibility = Visibility.Visible;
+            statusTextBlock.Text = "Getting location...";
+            statusTextBlock.Visibility = Visibility.Visible;
+
+            getGeolocation();
+        }
+
+        private void uploadReport()
+        {
+            //Testikoodissa simuloidaan upload lisäämällä 5 sekunnin odotus worker threadilla
+            BackgroundWorker worker = new BackgroundWorker();
+            worker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(doWorkCompleted);
+            worker.DoWork += new DoWorkEventHandler(doWork);
+            worker.RunWorkerAsync();
+        }
+
+        public static void doWork(object sender, DoWorkEventArgs e)
+        {
+            Thread.Sleep(7000);
+        }
+
+        public void doWorkCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            Deployment.Current.Dispatcher.BeginInvoke(delegate()
+            {
+                progressBar.Visibility = Visibility.Collapsed;
+                statusTextBlock.Text = "";
+
+                MessageBox.Show("Thank you for your report!");                
+            });
+            Dispatcher.BeginInvoke(() => NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative)));
         }
 
         /// <summary>
@@ -81,25 +120,21 @@ namespace CSReportApp
 
             try
             {
-                sendReportButton.IsEnabled = false;
-                progressBar.Visibility = Visibility.Visible;
-                statusTextBlock.Text = "Getting location...";
-                statusTextBlock.Visibility = Visibility.Visible;
-
                 Geoposition position = await geolocator.GetGeopositionAsync(maximumAge: TimeSpan.FromMinutes(1), timeout: TimeSpan.FromSeconds(30));
 
                 positionString = string.Format("Latitude: {0:0.0000}, Longitude: {1:0.0000}, Accuracy: {2}", position.Coordinate.Latitude, position.Coordinate.Longitude, position.Coordinate.Accuracy);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Deployment.Current.Dispatcher.BeginInvoke(delegate()
+                {
+                    MessageBox.Show(ex.Message);
+                });
             }
             finally
             {
-                progressBar.Visibility = Visibility.Collapsed;
-                statusTextBlock.Text = "";
-                statusTextBlock.Visibility = Visibility.Collapsed;
-                sendReportButton.IsEnabled = true;
+                statusTextBlock.Text = "Uploading...";
+                uploadReport();
             }
         }
 

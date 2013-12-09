@@ -22,7 +22,7 @@
         </DataTemplate>
         <DataTemplate x:Name="ListPickerFullModeItemTemplate">
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="{Binding}" Margin="10 0 0 0" FontSize="16"/>
+                <TextBlock Text="{Binding}" Margin="10 10 0 0" FontSize="30"/>
             </StackPanel>
         </DataTemplate>
     </phone:PhoneApplicationPage.Resources>

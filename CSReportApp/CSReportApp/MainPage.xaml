@@ -42,9 +42,9 @@
         <!--ContentPanel - place additional content here-->
         <phone:Pivot Margin="0,0,10,0" Grid.RowSpan="2">
             <phone:PivotItem CacheMode="{x:Null}" Header="City Helper" Margin="24,10,0,18">
-                <Grid Margin="10,10,-10,-10">
-                    <Button x:Name="menuButtonTakePicture" Content="Take a picture of the problem" Click="menuButtonTakePicture_Click" BorderThickness="0" HorizontalAlignment="Left" Padding="0,15,10,15" FontSize="24" Margin="10,9,0,467"/>
-                    <Button x:Name="menuButtonTakeVideo" Content="Take a video of the problem" BorderThickness="0" Click="menuButtonTakeVideo_Click" HorizontalAlignment="Left" Padding="0,15,10,15" FontSize="24" Margin="10,95,0,381"/>
+                <Grid Margin="0,0,0,0">
+                    <Button x:Name="menuButtonTakePicture" Content="Take a picture of the problem" Click="menuButtonTakePicture_Click" BorderThickness="0" HorizontalAlignment="Left" Padding="0,15,10,15" FontSize="28" Margin="10,9,0,451" Width="420"/>
+                    <Button x:Name="menuButtonTakeVideo" Content="Take a video of the problem" BorderThickness="0" Click="menuButtonTakeVideo_Click" HorizontalAlignment="Left" Padding="0,15,10,15" FontSize="28" Margin="0,116,0,344" Width="420"/>
                 </Grid>
             </phone:PivotItem>
             <phone:PivotItem CacheMode="{x:Null}" Header="History">
