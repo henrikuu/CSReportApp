@@ -177,8 +177,7 @@ namespace CSReportApp
 
         private void navigateToConfirmationPage()
         {
-            Dispatcher.BeginInvoke(() =>
-    NavigationService.Navigate(new Uri("/PhotoConfirmationView.xaml", UriKind.Relative)));
+            Dispatcher.BeginInvoke(() => NavigationService.Navigate(new Uri("/PhotoConfirmationView.xaml", UriKind.Relative)));
         }
 
         private void onButtonHalfPressHandler(object sender, EventArgs e)

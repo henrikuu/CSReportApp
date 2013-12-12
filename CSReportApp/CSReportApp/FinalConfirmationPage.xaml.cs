@@ -12,6 +12,7 @@ using Microsoft.Phone.Info;
 using System.Threading;
 using System.Windows.Threading;
 using System.ComponentModel;
+using System.Windows.Input;
 
 namespace CSReportApp
 {
@@ -113,6 +114,9 @@ namespace CSReportApp
             }
         } 
 
+        /// <summary>
+        /// Gets geolocation data. Is run asynchronously.
+        /// </summary>
         private async void getGeolocation() 
         {
             Geolocator geolocator = new Geolocator();
@@ -138,11 +142,21 @@ namespace CSReportApp
             }
         }
 
+        /// <summary>
+        /// Go back to the previous view if cancel button is pressed 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cancelReportButton_Click(object sender, RoutedEventArgs e)
         {
             Dispatcher.BeginInvoke(() => NavigationService.GoBack());  
         }
 
+        /// <summary>
+        /// Gets rid of the textbox hint text when the textbox is activated
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void moreInfoTextBox_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             if (moreInfoTextBox.Text == "More information (optional)")
@@ -150,6 +164,19 @@ namespace CSReportApp
                 moreInfoTextBox.Text = "";
                 moreInfoTextBox.FontStyle = System.Windows.FontStyles.Normal;
             }   
+        }
+
+        /// <summary>
+        /// Changes the focus outside the textbox if enter key is pressed, which in turn closes the keyboard. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void moreInfoTextBox_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                this.Focus();
+            }
         }
     }
 }

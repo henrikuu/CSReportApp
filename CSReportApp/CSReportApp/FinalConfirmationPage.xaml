@@ -40,7 +40,7 @@
                                 FullModeItemTemplate="{StaticResource ListPickerFullModeItemTemplate}" 
                                 FullModeHeader="Problem type" CacheMode="BitmapCache" Margin="10,193,10,-169"/>
 
-            <TextBox x:Name="moreInfoTextBox" HorizontalAlignment="Left" Height="197" Margin="0,293,0,0" TextWrapping="Wrap" Text="More information (optional)" VerticalAlignment="Top" Width="480" FontStyle="Italic" Opacity="0.8" Tap="moreInfoTextBox_Tap"/>
+            <TextBox x:Name="moreInfoTextBox" HorizontalAlignment="Left" Height="197" Margin="0,293,0,0" TextWrapping="Wrap" Text="More information (optional)" VerticalAlignment="Top" Width="480" FontStyle="Italic" Opacity="0.8" Tap="moreInfoTextBox_Tap" KeyDown="moreInfoTextBox_KeyDown"/>
             <Button x:Name="sendReportButton" Content="Send report" HorizontalAlignment="Left" Margin="10,673,0,0" VerticalAlignment="Top" Height="83" Width="212" Click="sendReportButton_Click"/>
             <Button x:Name="cancelReportButton" Content="Cancel" HorizontalAlignment="Left" Margin="258,673,10,12" VerticalAlignment="Top" Height="83" Width="212" Click="cancelReportButton_Click"/>
             <TextBlock HorizontalAlignment="Left" Margin="10,144,0,0" TextWrapping="Wrap" Text="Please select the type of the problem:" VerticalAlignment="Top" Height="44" Width="417" FontSize="24"/>

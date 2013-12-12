@@ -93,9 +93,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ConfirmationPage.xaml.cs">
-      <DependentUpon>ConfirmationPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="FinalConfirmationPage.xaml.cs">
       <DependentUpon>FinalConfirmationPage.xaml</DependentUpon>
     </Compile>
@@ -121,16 +118,15 @@
     <Compile Include="VideoCapturePage.xaml.cs">
       <DependentUpon>VideoCapturePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="VideoConfirmationPage.xaml.cs">
+      <DependentUpon>VideoConfirmationPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
-    <Page Include="ConfirmationPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="FinalConfirmationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -152,6 +148,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="VideoCapturePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VideoConfirmationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -183,6 +183,7 @@
     <Content Include="Assets\Tiles\IconicTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\playbutton.png" />
     <Content Include="Images\questionmark.png" />
     <Content Include="README_FIRST.txt" />
     <Content Include="Toolkit.Content\ApplicationBar.Add.png" />

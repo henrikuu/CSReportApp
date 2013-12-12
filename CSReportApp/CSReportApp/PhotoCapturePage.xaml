@@ -27,9 +27,8 @@
                     <VideoBrush x:Name="photoViewfinderVideoBrush"/>
                 </Canvas.Background>
             </Canvas>
-            <Button x:Name="takePhotoButton" Content="Take photo" HorizontalAlignment="Left" Margin="10,673,0,0" VerticalAlignment="Top" Height="83" Width="212" Click="takePhotoButton_Click"/>
-            <Button x:Name="cancelButton" Content="Cancel" Margin="258,673,10,12" Click="cancelButton_Click" RenderTransformOrigin="0.53,0.78"/>
-
+            <Button x:Name="takePhotoButton" Content="Take photo" HorizontalAlignment="Left" Margin="10,673,10,12" VerticalAlignment="Top" Height="83" Width="212" Click="takePhotoButton_Click"/>
+            <Button x:Name="cancelButton" Content="Cancel" Margin="258,673,10,12" Click="cancelButton_Click" VerticalAlignment="Top" Height="83" Width="212"/>
         </Grid>
     </Grid>
 
